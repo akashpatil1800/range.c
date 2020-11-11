@@ -14,7 +14,7 @@ int main()
  
 pid_t childpid;
  
-int num1,num2;
+int num1,num2,x;
  
 int fd[2];
  
