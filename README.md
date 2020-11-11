@@ -14,7 +14,7 @@ int main()
  
 pid_t childpid;
  
-int x;
+int num1,num2;
  
 int fd[2];
  
@@ -46,27 +46,25 @@ printf("enter the value of x ");
  
 scanf("%d",&x);
  
-if (x >1 && x <8000)
- 
+if(num1<1000 || num1>9999 || num2<1000 || num2>9999)
+
+for(int i =num1; i<=num2;i++)
 {
- 
-printf( "8");
- 
-}
- 
-else
- 
+int sum =0;
+for(int num =i;num>0;num/=10)
 {
- 
-printf(" not 8");
- 
+sum+=(num%10);
 }
- 
+if(sum==8)
+{
+
 write(fd[1],&x,sizeof(x));
  
-printf("child send value: %d\n", x);
+printf("child send value: %d\n", i);
  
 close(fd[1]);
+}
+}
  
 }
  
